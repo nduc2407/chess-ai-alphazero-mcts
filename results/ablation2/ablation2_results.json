@@ -1,0 +1,150 @@
+{
+ "opponent": "level2",
+ "games_per_point": 20,
+ "results": [
+  {
+   "agent": "level4",
+   "sims": 50,
+   "wins": 0,
+   "draws": 0,
+   "losses": 20,
+   "score": 0.0,
+   "wilson_ci": [
+    0.0,
+    0.16113012549493322
+   ]
+  },
+  {
+   "agent": "level4",
+   "sims": 100,
+   "wins": 0,
+   "draws": 0,
+   "losses": 20,
+   "score": 0.0,
+   "wilson_ci": [
+    0.0,
+    0.16113012549493322
+   ]
+  },
+  {
+   "agent": "level4",
+   "sims": 200,
+   "wins": 0,
+   "draws": 0,
+   "losses": 20,
+   "score": 0.0,
+   "wilson_ci": [
+    0.0,
+    0.16113012549493322
+   ]
+  },
+  {
+   "agent": "level4",
+   "sims": 400,
+   "wins": 0,
+   "draws": 0,
+   "losses": 20,
+   "score": 0.0,
+   "wilson_ci": [
+    0.0,
+    0.16113012549493322
+   ]
+  },
+  {
+   "agent": "level4",
+   "sims": 800,
+   "wins": 0,
+   "draws": 0,
+   "losses": 20,
+   "score": 0.0,
+   "wilson_ci": [
+    0.0,
+    0.16113012549493322
+   ]
+  },
+  {
+   "agent": "level4",
+   "sims": 1000,
+   "wins": 0,
+   "draws": 0,
+   "losses": 20,
+   "score": 0.0,
+   "wilson_ci": [
+    0.0,
+    0.16113012549493322
+   ]
+  },
+  {
+   "agent": "level7",
+   "sims": 50,
+   "wins": 3,
+   "draws": 1,
+   "losses": 16,
+   "score": 0.175,
+   "wilson_ci": [
+    0.06610509740941087,
+    0.3886294841622956
+   ]
+  },
+  {
+   "agent": "level7",
+   "sims": 100,
+   "wins": 1,
+   "draws": 17,
+   "losses": 2,
+   "score": 0.475,
+   "wilson_ci": [
+    0.27853373483665333,
+    0.6795227714380933
+   ]
+  },
+  {
+   "agent": "level7",
+   "sims": 200,
+   "wins": 11,
+   "draws": 7,
+   "losses": 2,
+   "score": 0.725,
+   "wilson_ci": [
+    0.505880494175146,
+    0.871610949352134
+   ]
+  },
+  {
+   "agent": "level7",
+   "sims": 400,
+   "wins": 20,
+   "draws": 0,
+   "losses": 0,
+   "score": 1.0,
+   "wilson_ci": [
+    0.8388698745050667,
+    1.0
+   ]
+  },
+  {
+   "agent": "level7",
+   "sims": 800,
+   "wins": 10,
+   "draws": 2,
+   "losses": 8,
+   "score": 0.55,
+   "wilson_ci": [
+    0.3420820083075997,
+    0.7418049791429071
+   ]
+  },
+  {
+   "agent": "level7",
+   "sims": 1000,
+   "wins": 20,
+   "draws": 0,
+   "losses": 0,
+   "score": 1.0,
+   "wilson_ci": [
+    0.8388698745050667,
+    1.0
+   ]
+  }
+ ]
+}

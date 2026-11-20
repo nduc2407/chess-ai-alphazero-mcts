@@ -1,0 +1,143 @@
+[
+ {
+  "agent": "L1",
+  "budget": {},
+  "solved": 2,
+  "n": 50,
+  "mean_time_sec": 3.346995999947922e-05,
+  "solved_ids": [
+   "WAC.041",
+   "WAC.050"
+  ]
+ },
+ {
+  "agent": "L2",
+  "budget": {},
+  "solved": 5,
+  "n": 50,
+  "mean_time_sec": 0.008225271599999076,
+  "solved_ids": [
+   "WAC.030",
+   "WAC.031",
+   "WAC.037",
+   "WAC.041",
+   "WAC.045"
+  ]
+ },
+ {
+  "agent": "L3",
+  "budget": {
+   "max_workload": 2000
+  },
+  "solved": 29,
+  "n": 50,
+  "mean_time_sec": 0.07197921352000008,
+  "solved_ids": [
+   "WAC.003",
+   "WAC.004",
+   "WAC.006",
+   "WAC.008",
+   "WAC.010",
+   "WAC.015",
+   "WAC.016",
+   "WAC.022",
+   "WAC.024",
+   "WAC.025",
+   "WAC.026",
+   "WAC.027",
+   "WAC.028",
+   "WAC.029",
+   "WAC.031",
+   "WAC.032",
+   "WAC.033",
+   "WAC.034",
+   "WAC.036",
+   "WAC.037",
+   "WAC.038",
+   "WAC.039",
+   "WAC.040",
+   "WAC.041",
+   "WAC.043",
+   "WAC.044",
+   "WAC.045",
+   "WAC.047",
+   "WAC.048"
+  ]
+ },
+ {
+  "agent": "L3",
+  "budget": {
+   "max_workload": 10000
+  },
+  "solved": 36,
+  "n": 50,
+  "mean_time_sec": 0.3126077438399992,
+  "solved_ids": [
+   "WAC.003",
+   "WAC.004",
+   "WAC.005",
+   "WAC.006",
+   "WAC.007",
+   "WAC.008",
+   "WAC.010",
+   "WAC.011",
+   "WAC.012",
+   "WAC.013",
+   "WAC.015",
+   "WAC.016",
+   "WAC.017",
+   "WAC.020",
+   "WAC.022",
+   "WAC.024",
+   "WAC.025",
+   "WAC.026",
+   "WAC.027",
+   "WAC.028",
+   "WAC.029",
+   "WAC.031",
+   "WAC.032",
+   "WAC.033",
+   "WAC.034",
+   "WAC.036",
+   "WAC.037",
+   "WAC.038",
+   "WAC.039",
+   "WAC.040",
+   "WAC.041",
+   "WAC.043",
+   "WAC.044",
+   "WAC.045",
+   "WAC.047",
+   "WAC.050"
+  ]
+ },
+ {
+  "agent": "L4",
+  "budget": {
+   "max_workload": 200
+  },
+  "solved": 3,
+  "n": 50,
+  "mean_time_sec": 0.3919235116999991,
+  "solved_ids": [
+   "WAC.022",
+   "WAC.040",
+   "WAC.048"
+  ]
+ },
+ {
+  "agent": "L4",
+  "budget": {
+   "max_workload": 800
+  },
+  "solved": 4,
+  "n": 50,
+  "mean_time_sec": 1.6004623946200007,
+  "solved_ids": [
+   "WAC.012",
+   "WAC.022",
+   "WAC.044",
+   "WAC.045"
+  ]
+ }
+]

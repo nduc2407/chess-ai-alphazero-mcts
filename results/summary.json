@@ -1,0 +1,394 @@
+{
+ "pairs": {
+  "L1-L2": {
+   "n": 32,
+   "W": 0,
+   "D": 0,
+   "L": 32,
+   "score": 0.0,
+   "wilson": [
+    0,
+    0.1071827150573635
+   ],
+   "boot": [
+    0.0,
+    0.0
+   ],
+   "elo": -1199.826195290393,
+   "maxply_draws": 0,
+   "mean_plies": 36.625,
+   "white_score": 0.0,
+   "black_score": 0.0
+  },
+  "L1-L3": {
+   "n": 32,
+   "W": 0,
+   "D": 0,
+   "L": 32,
+   "score": 0.0,
+   "wilson": [
+    0,
+    0.1071827150573635
+   ],
+   "boot": [
+    0.0,
+    0.0
+   ],
+   "elo": -1199.826195290393,
+   "maxply_draws": 0,
+   "mean_plies": 33.9375,
+   "white_score": 0.0,
+   "black_score": 0.0
+  },
+  "L1-L4": {
+   "n": 32,
+   "W": 0,
+   "D": 7,
+   "L": 25,
+   "score": 0.109375,
+   "wilson": [
+    0.040817505786659325,
+    0.26166899035190594
+   ],
+   "boot": [
+    0.046875,
+    0.1875
+   ],
+   "elo": -364.3107262632938,
+   "maxply_draws": 7,
+   "mean_plies": 141.90625,
+   "white_score": 0.125,
+   "black_score": 0.09375
+  },
+  "L2-L3": {
+   "n": 32,
+   "W": 0,
+   "D": 8,
+   "L": 24,
+   "score": 0.125,
+   "wilson": [
+    0.04970053844474301,
+    0.2806864978482796
+   ],
+   "boot": [
+    0.0625,
+    0.1875
+   ],
+   "elo": -338.0392160057027,
+   "maxply_draws": 0,
+   "mean_plies": 81.4375,
+   "white_score": 0.09375,
+   "black_score": 0.15625
+  },
+  "L2-L4": {
+   "n": 32,
+   "W": 32,
+   "D": 0,
+   "L": 0,
+   "score": 1.0,
+   "wilson": [
+    0.8928172849426366,
+    1
+   ],
+   "boot": [
+    1.0,
+    1.0
+   ],
+   "elo": 1199.8261952903777,
+   "maxply_draws": 0,
+   "mean_plies": 37.75,
+   "white_score": 1.0,
+   "black_score": 1.0
+  },
+  "L3-L4": {
+   "n": 32,
+   "W": 32,
+   "D": 0,
+   "L": 0,
+   "score": 1.0,
+   "wilson": [
+    0.8928172849426366,
+    1
+   ],
+   "boot": [
+    1.0,
+    1.0
+   ],
+   "elo": 1199.8261952903777,
+   "maxply_draws": 0,
+   "mean_plies": 30.625,
+   "white_score": 1.0,
+   "black_score": 1.0
+  }
+ },
+ "latency": {
+  "L1": {
+   "mean_ms": 0.0296197789871485,
+   "max_ms": 0.11263099997904646,
+   "work_per_move": 1.0
+  },
+  "L3": {
+   "mean_ms": 68.14499335540813,
+   "max_ms": 134.50257200008764,
+   "work_per_move": 1906.618582944421
+  },
+  "L2": {
+   "mean_ms": 5.906594699817004,
+   "max_ms": 19.241988000089805,
+   "work_per_move": 31.481629392971247
+  },
+  "L4": {
+   "mean_ms": 469.3345713917048,
+   "max_ms": 630.7784109999375,
+   "work_per_move": 200.0
+  }
+ },
+ "overall": {
+  "L1": {
+   "score": 0.036458333333333336,
+   "n": 96,
+   "elo_vs_field": -568.8294753555028
+  },
+  "L3": {
+   "score": 0.9583333333333334,
+   "n": 96,
+   "elo_vs_field": 544.6911344070372
+  },
+  "L2": {
+   "score": 0.7083333333333334,
+   "n": 96,
+   "elo_vs_field": 154.1403525456069
+  },
+  "L4": {
+   "score": 0.296875,
+   "n": 96,
+   "elo_vs_field": -149.7835651290059
+  }
+ },
+ "ablation_search": [
+  {
+   "depth": 2,
+   "config": "Minimax thuần (no AB, no order, no TT, no Q)",
+   "total_nodes": 67241.0,
+   "mean_nodes": 1344.82,
+   "total_time_sec": 3.0528462969989505,
+   "solved": 11,
+   "n": 50
+  },
+  {
+   "depth": 2,
+   "config": "+ Alpha-Beta",
+   "total_nodes": 26975.0,
+   "mean_nodes": 539.5,
+   "total_time_sec": 1.2673784990001877,
+   "solved": 11,
+   "n": 50
+  },
+  {
+   "depth": 2,
+   "config": "+ Move Ordering",
+   "total_nodes": 9599.0,
+   "mean_nodes": 191.98,
+   "total_time_sec": 0.5393767189998471,
+   "solved": 11,
+   "n": 50
+  },
+  {
+   "depth": 2,
+   "config": "+ TT",
+   "total_nodes": 9548.0,
+   "mean_nodes": 190.96,
+   "total_time_sec": 0.4823550419991989,
+   "solved": 11,
+   "n": 50
+  },
+  {
+   "depth": 2,
+   "config": "+ Quiescence (đầy đủ)",
+   "total_nodes": 55786.0,
+   "mean_nodes": 1115.72,
+   "total_time_sec": 2.3326408009997976,
+   "solved": 26,
+   "n": 50
+  },
+  {
+   "depth": 3,
+   "config": "Minimax thuần (no AB, no order, no TT, no Q)",
+   "total_nodes": 2574744.0,
+   "mean_nodes": 51494.88,
+   "total_time_sec": 115.9684432040001,
+   "solved": 27,
+   "n": 50
+  },
+  {
+   "depth": 3,
+   "config": "+ Alpha-Beta",
+   "total_nodes": 362297.0,
+   "mean_nodes": 7245.94,
+   "total_time_sec": 15.91822661300057,
+   "solved": 27,
+   "n": 50
+  },
+  {
+   "depth": 3,
+   "config": "+ Move Ordering",
+   "total_nodes": 100800.0,
+   "mean_nodes": 2016.0,
+   "total_time_sec": 4.702716354000586,
+   "solved": 27,
+   "n": 50
+  },
+  {
+   "depth": 3,
+   "config": "+ TT",
+   "total_nodes": 98080.0,
+   "mean_nodes": 1961.6,
+   "total_time_sec": 4.512218034000398,
+   "solved": 27,
+   "n": 50
+  },
+  {
+   "depth": 3,
+   "config": "+ Quiescence (đầy đủ)",
+   "total_nodes": 235216.0,
+   "mean_nodes": 4704.32,
+   "total_time_sec": 7.684560879999481,
+   "solved": 37,
+   "n": 50
+  }
+ ],
+ "wac": [
+  {
+   "agent": "L1",
+   "budget": {},
+   "solved": 2,
+   "n": 50,
+   "mean_time_sec": 3.346995999947922e-05
+  },
+  {
+   "agent": "L2",
+   "budget": {},
+   "solved": 5,
+   "n": 50,
+   "mean_time_sec": 0.008225271599999076
+  },
+  {
+   "agent": "L3",
+   "budget": {
+    "max_workload": 2000
+   },
+   "solved": 29,
+   "n": 50,
+   "mean_time_sec": 0.07197921352000008
+  },
+  {
+   "agent": "L3",
+   "budget": {
+    "max_workload": 10000
+   },
+   "solved": 36,
+   "n": 50,
+   "mean_time_sec": 0.3126077438399992
+  },
+  {
+   "agent": "L4",
+   "budget": {
+    "max_workload": 200
+   },
+   "solved": 3,
+   "n": 50,
+   "mean_time_sec": 0.3919235116999991
+  },
+  {
+   "agent": "L4",
+   "budget": {
+    "max_workload": 800
+   },
+   "solved": 4,
+   "n": 50,
+   "mean_time_sec": 1.6004623946200007
+  }
+ ],
+ "ablation_mcts": {
+  "25": {
+   "n": 24,
+   "W": 0,
+   "D": 0,
+   "L": 24,
+   "score": 0.0,
+   "wilson": [
+    0,
+    0.13798057582897535
+   ],
+   "boot": [
+    0.0,
+    0.0
+   ],
+   "elo": -1199.826195290393,
+   "maxply_draws": 0,
+   "mean_plies": 40.5,
+   "white_score": 0.0,
+   "black_score": 0.0
+  },
+  "50": {
+   "n": 24,
+   "W": 0,
+   "D": 0,
+   "L": 24,
+   "score": 0.0,
+   "wilson": [
+    0,
+    0.13798057582897535
+   ],
+   "boot": [
+    0.0,
+    0.0
+   ],
+   "elo": -1199.826195290393,
+   "maxply_draws": 0,
+   "mean_plies": 42.583333333333336,
+   "white_score": 0.0,
+   "black_score": 0.0
+  },
+  "100": {
+   "n": 24,
+   "W": 0,
+   "D": 0,
+   "L": 24,
+   "score": 0.0,
+   "wilson": [
+    0,
+    0.13798057582897535
+   ],
+   "boot": [
+    0.0,
+    0.0
+   ],
+   "elo": -1199.826195290393,
+   "maxply_draws": 0,
+   "mean_plies": 39.916666666666664,
+   "white_score": 0.0,
+   "black_score": 0.0
+  },
+  "200": {
+   "n": 24,
+   "W": 0,
+   "D": 0,
+   "L": 24,
+   "score": 0.0,
+   "wilson": [
+    0,
+    0.13798057582897535
+   ],
+   "boot": [
+    0.0,
+    0.0
+   ],
+   "elo": -1199.826195290393,
+   "maxply_draws": 0,
+   "mean_plies": 38.833333333333336,
+   "white_score": 0.0,
+   "black_score": 0.0
+  }
+ }
+}

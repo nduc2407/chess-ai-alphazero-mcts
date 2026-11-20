@@ -1,0 +1,320 @@
+{
+ "curve": [
+  {
+   "episode": 1000,
+   "epsilon": 0.9525451272563629,
+   "table_size": 29289,
+   "algo": "q_learning",
+   "win_rate": 0.02,
+   "avg_mate_plies": 22.0
+  },
+  {
+   "episode": 2000,
+   "epsilon": 0.9050427521376069,
+   "table_size": 58085,
+   "algo": "q_learning",
+   "win_rate": 0.0,
+   "avg_mate_plies": null
+  },
+  {
+   "episode": 3000,
+   "epsilon": 0.857540377018851,
+   "table_size": 87026,
+   "algo": "q_learning",
+   "win_rate": 0.03,
+   "avg_mate_plies": 10.333333333333334
+  },
+  {
+   "episode": 4000,
+   "epsilon": 0.810038001900095,
+   "table_size": 115836,
+   "algo": "q_learning",
+   "win_rate": 0.01,
+   "avg_mate_plies": 61.0
+  },
+  {
+   "episode": 5000,
+   "epsilon": 0.762535626781339,
+   "table_size": 143552,
+   "algo": "q_learning",
+   "win_rate": 0.02,
+   "avg_mate_plies": 70.0
+  },
+  {
+   "episode": 6000,
+   "epsilon": 0.7150332516625831,
+   "table_size": 171623,
+   "algo": "q_learning",
+   "win_rate": 0.02,
+   "avg_mate_plies": 31.0
+  },
+  {
+   "episode": 7000,
+   "epsilon": 0.6675308765438273,
+   "table_size": 200163,
+   "algo": "q_learning",
+   "win_rate": 0.01,
+   "avg_mate_plies": 57.0
+  },
+  {
+   "episode": 8000,
+   "epsilon": 0.6200285014250713,
+   "table_size": 228756,
+   "algo": "q_learning",
+   "win_rate": 0.03,
+   "avg_mate_plies": 39.0
+  },
+  {
+   "episode": 9000,
+   "epsilon": 0.5725261263063153,
+   "table_size": 255991,
+   "algo": "q_learning",
+   "win_rate": 0.04,
+   "avg_mate_plies": 34.0
+  },
+  {
+   "episode": 10000,
+   "epsilon": 0.5250237511875594,
+   "table_size": 283712,
+   "algo": "q_learning",
+   "win_rate": 0.02,
+   "avg_mate_plies": 40.0
+  },
+  {
+   "episode": 11000,
+   "epsilon": 0.4775213760688035,
+   "table_size": 311513,
+   "algo": "q_learning",
+   "win_rate": 0.01,
+   "avg_mate_plies": 87.0
+  },
+  {
+   "episode": 12000,
+   "epsilon": 0.4300190009500475,
+   "table_size": 338971,
+   "algo": "q_learning",
+   "win_rate": 0.02,
+   "avg_mate_plies": 66.0
+  },
+  {
+   "episode": 13000,
+   "epsilon": 0.38251662583129165,
+   "table_size": 365915,
+   "algo": "q_learning",
+   "win_rate": 0.0,
+   "avg_mate_plies": null
+  },
+  {
+   "episode": 14000,
+   "epsilon": 0.33501425071253566,
+   "table_size": 393207,
+   "algo": "q_learning",
+   "win_rate": 0.01,
+   "avg_mate_plies": 11.0
+  },
+  {
+   "episode": 15000,
+   "epsilon": 0.2875118755937798,
+   "table_size": 420637,
+   "algo": "q_learning",
+   "win_rate": 0.06,
+   "avg_mate_plies": 38.0
+  },
+  {
+   "episode": 16000,
+   "epsilon": 0.24000950047502378,
+   "table_size": 448749,
+   "algo": "q_learning",
+   "win_rate": 0.04,
+   "avg_mate_plies": 47.0
+  },
+  {
+   "episode": 17000,
+   "epsilon": 0.1925071253562679,
+   "table_size": 476783,
+   "algo": "q_learning",
+   "win_rate": 0.01,
+   "avg_mate_plies": 1.0
+  },
+  {
+   "episode": 18000,
+   "epsilon": 0.14500475023751191,
+   "table_size": 504996,
+   "algo": "q_learning",
+   "win_rate": 0.04,
+   "avg_mate_plies": 30.5
+  },
+  {
+   "episode": 19000,
+   "epsilon": 0.09750237511875592,
+   "table_size": 533111,
+   "algo": "q_learning",
+   "win_rate": 0.01,
+   "avg_mate_plies": 17.0
+  },
+  {
+   "episode": 20000,
+   "epsilon": 0.050000000000000044,
+   "table_size": 560690,
+   "algo": "q_learning",
+   "win_rate": 0.04,
+   "avg_mate_plies": 49.0
+  },
+  {
+   "episode": 250,
+   "table_size": 139091,
+   "algo": "reinforce",
+   "win_rate": 0.01,
+   "avg_mate_plies": 69.0
+  },
+  {
+   "episode": 500,
+   "table_size": 269770,
+   "algo": "reinforce",
+   "win_rate": 0.0,
+   "avg_mate_plies": null
+  },
+  {
+   "episode": 750,
+   "table_size": 388917,
+   "algo": "reinforce",
+   "win_rate": 0.0,
+   "avg_mate_plies": null
+  },
+  {
+   "episode": 1000,
+   "table_size": 514479,
+   "algo": "reinforce",
+   "win_rate": 0.01,
+   "avg_mate_plies": 5.0
+  },
+  {
+   "episode": 1250,
+   "table_size": 626226,
+   "algo": "reinforce",
+   "win_rate": 0.0,
+   "avg_mate_plies": null
+  },
+  {
+   "episode": 1500,
+   "table_size": 734390,
+   "algo": "reinforce",
+   "win_rate": 0.0,
+   "avg_mate_plies": null
+  },
+  {
+   "episode": 1750,
+   "table_size": 836592,
+   "algo": "reinforce",
+   "win_rate": 0.02,
+   "avg_mate_plies": 86.0
+  },
+  {
+   "episode": 2000,
+   "table_size": 940208,
+   "algo": "reinforce",
+   "win_rate": 0.01,
+   "avg_mate_plies": 91.0
+  },
+  {
+   "episode": 2250,
+   "table_size": 1042448,
+   "algo": "reinforce",
+   "win_rate": 0.01,
+   "avg_mate_plies": 5.0
+  },
+  {
+   "episode": 2500,
+   "table_size": 1136610,
+   "algo": "reinforce",
+   "win_rate": 0.0,
+   "avg_mate_plies": null
+  },
+  {
+   "episode": 2750,
+   "table_size": 1226679,
+   "algo": "reinforce",
+   "win_rate": 0.0,
+   "avg_mate_plies": null
+  },
+  {
+   "episode": 3000,
+   "table_size": 1313689,
+   "algo": "reinforce",
+   "win_rate": 0.01,
+   "avg_mate_plies": 19.0
+  },
+  {
+   "episode": 3250,
+   "table_size": 1392004,
+   "algo": "reinforce",
+   "win_rate": 0.02,
+   "avg_mate_plies": 31.0
+  },
+  {
+   "episode": 3500,
+   "table_size": 1461170,
+   "algo": "reinforce",
+   "win_rate": 0.01,
+   "avg_mate_plies": 5.0
+  },
+  {
+   "episode": 3750,
+   "table_size": 1537222,
+   "algo": "reinforce",
+   "win_rate": 0.0,
+   "avg_mate_plies": null
+  },
+  {
+   "episode": 4000,
+   "table_size": 1608792,
+   "algo": "reinforce",
+   "win_rate": 0.01,
+   "avg_mate_plies": 93.0
+  },
+  {
+   "episode": 4250,
+   "table_size": 1680030,
+   "algo": "reinforce",
+   "win_rate": 0.0,
+   "avg_mate_plies": null
+  },
+  {
+   "episode": 4500,
+   "table_size": 1740889,
+   "algo": "reinforce",
+   "win_rate": 0.01,
+   "avg_mate_plies": 11.0
+  },
+  {
+   "episode": 4750,
+   "table_size": 1804959,
+   "algo": "reinforce",
+   "win_rate": 0.02,
+   "avg_mate_plies": 80.0
+  },
+  {
+   "episode": 5000,
+   "table_size": 1863181,
+   "algo": "reinforce",
+   "win_rate": 0.03,
+   "avg_mate_plies": 57.0
+  }
+ ],
+ "episodes": 20000,
+ "reinforce_episodes": 5000,
+ "seed": 42,
+ "max_moves": 50,
+ "config": {
+  "subgame": "KRK",
+  "algorithm": "tabular_q_and_reinforce",
+  "episodes": 20000,
+  "gamma": 0.99,
+  "step_penalty": -0.01,
+  "win_reward": 1.0,
+  "draw_penalty": -0.2,
+  "learning_rate": 0.1,
+  "epsilon_start": 1.0,
+  "epsilon_end": 0.05
+ }
+}

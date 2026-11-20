@@ -1,0 +1,92 @@
+[
+ {
+  "depth": 2,
+  "config": "Minimax thuần (no AB, no order, no TT, no Q)",
+  "total_nodes": 67241.0,
+  "mean_nodes": 1344.82,
+  "total_time_sec": 3.0528462969989505,
+  "solved": 11,
+  "n": 50
+ },
+ {
+  "depth": 2,
+  "config": "+ Alpha-Beta",
+  "total_nodes": 26975.0,
+  "mean_nodes": 539.5,
+  "total_time_sec": 1.2673784990001877,
+  "solved": 11,
+  "n": 50
+ },
+ {
+  "depth": 2,
+  "config": "+ Move Ordering",
+  "total_nodes": 9599.0,
+  "mean_nodes": 191.98,
+  "total_time_sec": 0.5393767189998471,
+  "solved": 11,
+  "n": 50
+ },
+ {
+  "depth": 2,
+  "config": "+ TT",
+  "total_nodes": 9548.0,
+  "mean_nodes": 190.96,
+  "total_time_sec": 0.4823550419991989,
+  "solved": 11,
+  "n": 50
+ },
+ {
+  "depth": 2,
+  "config": "+ Quiescence (đầy đủ)",
+  "total_nodes": 55786.0,
+  "mean_nodes": 1115.72,
+  "total_time_sec": 2.3326408009997976,
+  "solved": 26,
+  "n": 50
+ },
+ {
+  "depth": 3,
+  "config": "Minimax thuần (no AB, no order, no TT, no Q)",
+  "total_nodes": 2574744.0,
+  "mean_nodes": 51494.88,
+  "total_time_sec": 115.9684432040001,
+  "solved": 27,
+  "n": 50
+ },
+ {
+  "depth": 3,
+  "config": "+ Alpha-Beta",
+  "total_nodes": 362297.0,
+  "mean_nodes": 7245.94,
+  "total_time_sec": 15.91822661300057,
+  "solved": 27,
+  "n": 50
+ },
+ {
+  "depth": 3,
+  "config": "+ Move Ordering",
+  "total_nodes": 100800.0,
+  "mean_nodes": 2016.0,
+  "total_time_sec": 4.702716354000586,
+  "solved": 27,
+  "n": 50
+ },
+ {
+  "depth": 3,
+  "config": "+ TT",
+  "total_nodes": 98080.0,
+  "mean_nodes": 1961.6,
+  "total_time_sec": 4.512218034000398,
+  "solved": 27,
+  "n": 50
+ },
+ {
+  "depth": 3,
+  "config": "+ Quiescence (đầy đủ)",
+  "total_nodes": 235216.0,
+  "mean_nodes": 4704.32,
+  "total_time_sec": 7.684560879999481,
+  "solved": 37,
+  "n": 50
+ }
+]

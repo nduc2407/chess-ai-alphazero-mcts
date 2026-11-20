@@ -1,0 +1,124 @@
+% !TEX program = xelatex
+\documentclass[13pt,a4paper]{extreport}
+\usepackage[a4paper,left=2.5cm,right=2cm,top=2.7cm,bottom=2.5cm,headheight=30pt]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Termes}
+\setmonofont{TeX Gyre Cursor}[Scale=0.88]
+\usepackage{xcolor,graphicx,booktabs,tabularx,array,float,caption,subcaption,amsmath,amssymb,enumitem,fancyhdr,titlesec,tikz,listings,algorithm,algpseudocode,hyperref,setspace}
+\usetikzlibrary{positioning,shapes,arrows.meta}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black}
+\renewcommand{\baselinestretch}{1.2}
+\setlength{\parindent}{1cm}\setlength{\parskip}{3pt}
+\captionsetup{font=small,labelsep=colon}
+
+% ---------- metadata ----------
+\newcommand{\TenMon}{Trí tuệ Nhân tạo Nâng cao}
+\newcommand{\TenDeTai}{Xây dựng và Đánh giá Game AI Cờ vua Đa cấp độ}
+\newcommand{\GVHD}{Đỗ Như Tài}
+\newcommand{\NhomSo}{27}
+\newcommand{\RepoURL}{https://github.com/nduc2407/chess-ai-alphazero-mcts}
+\newcommand{\CommitNop}{70ac9fa (nhánh feature/tv1-core-search-rl) + thư mục report/}
+\newcommand{\NgayThang}{THÁNG 11/2026}
+
+% ---------- tiêu đề ----------
+\titleformat{\chapter}[block]{\centering\bfseries\Large}{\MakeUppercase{Chương \thechapter.}}{0.5em}{\MakeUppercase}
+\titlespacing*{\chapter}{0pt}{-10pt}{18pt}
+\titleformat{\section}{\bfseries\large\sffamily\selectfont}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\bfseries\normalsize\sffamily\selectfont}{\thesubsection}{0.8em}{}
+\renewcommand{\thetable}{\thechapter.\arabic{table}}
+\renewcommand{\thefigure}{\thechapter.\arabic{figure}}
+\renewcommand{\tablename}{Bảng}\renewcommand{\figurename}{Hình}
+\renewcommand{\contentsname}{Mục lục}
+\renewcommand{\listtablename}{Danh sách bảng}\renewcommand{\listfigurename}{Danh sách hình}
+\floatname{algorithm}{Thuật toán}
+\renewcommand{\algorithmicrequire}{\textbf{Đầu vào:}}\renewcommand{\algorithmicensure}{\textbf{Đầu ra:}}
+
+% ---------- header ----------
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\raisebox{-0.45cm}{\includegraphics[height=1cm]{logo.png}}\hspace{0.5em}\begin{minipage}[b]{8cm}\small Trường Đại học Sài Gòn\\[-2pt]\normalsize Khoa Công nghệ Thông tin\end{minipage}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\fancypagestyle{plain}{\fancyhf{}\fancyhead[L]{\raisebox{-0.45cm}{\includegraphics[height=1cm]{logo.png}}\hspace{0.5em}\begin{minipage}[b]{8cm}\small Trường Đại học Sài Gòn\\[-2pt]\normalsize Khoa Công nghệ Thông tin\end{minipage}}\fancyfoot[C]{\thepage}\renewcommand{\headrulewidth}{0.4pt}}
+\newcommand{\chuong}[1]{\chapter*{#1}\addcontentsline{toc}{chapter}{#1}\markboth{}{}}
+\newcommand{\tieude}[1]{\begin{center}\bfseries\Large\MakeUppercase{#1}\end{center}\vspace{0.6cm}}
+
+% ---------- code ----------
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true,frame=tb,backgroundcolor=\color{black!4},columns=fullflexible,keepspaces=true}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\begin{document}\begin{titlepage}
+\centering
+{\bfseries\large TRƯỜNG ĐẠI HỌC SÀI GÒN\\ KHOA CÔNG NGHỆ THÔNG TIN\par}
+\vspace{1cm}
+\includegraphics[width=4.2cm]{logo.png}\par
+\vspace{1.6cm}
+\rule{\textwidth}{0.5pt}\\[0.4cm]
+{\bfseries\large \TenMon\par}
+\vspace{0.3cm}\rule{\textwidth}{0.5pt}\\[0.5cm]
+{\bfseries\fontsize{22}{26}\selectfont \TenDeTai\par}
+\vspace{0.3cm}\rule{\textwidth}{0.5pt}
+\vspace{2.2cm}
+
+\begin{flushleft}\hspace{3.2cm}
+\begin{tabular}{@{}l l l@{}}
+\textbf{GVHD:} & \GVHD & \\[4pt]
+\textbf{Nhóm \NhomSo:} & Đặng Nhật Đức & 3123410082 \\
+ & Võ Văn Tuấn & 3123410414 \\
+ & Nguyễn Thái Vinh & 3123410433 \\
+\end{tabular}
+\end{flushleft}
+\vspace{1.6cm}
+{\small Báo cáo tiến độ đồ án\\
+Repo: \texttt{\RepoURL}\\
+Commit nộp bài: \CommitNop\par}
+\vfill
+{\small TP. HỒ CHÍ MINH, \NgayThang\par}
+\end{titlepage}
+\pagenumbering{arabic}
+\chapter*{Báo cáo tiến độ}\addcontentsline{toc}{chapter}{Báo cáo tiến độ}
+\section*{1. Tóm tắt}
+Tính đến 15/11/2026, nhóm đã hoàn thành phần môi trường cờ vua, bốn tác tử Cấp 1--4 và quy trình đánh giá thực nghiệm có log đầy đủ. Các Cấp 5--8 (mạng nơ-ron, RL, Guided MCTS, AlphaZero-style) \textbf{chưa được cài đặt}; do đó chưa có kết quả huấn luyện nào.
+
+\section*{2. Tình trạng theo hạng mục}
+\begin{table}[H]\centering\small\caption{Tiến độ theo hạng mục (theo nhánh \code{feature/tv1-core-search-rl}, commit 70ac9fa).}
+\begin{tabularx}{\textwidth}{l l Y}\toprule Hạng mục & Trạng thái & Bằng chứng / ghi chú\\\midrule
+Môi trường \code{ChessEnv}, lượng giá, Zobrist & Hoàn thành & 11 test \code{pytest} đạt\\
+Cấp 1 Random, Cấp 2 Heuristic & Hoàn thành & Giải đấu 32 ván/cặp\\
+Cấp 3 Alpha-Beta (ID, ordering, TT, quiescence) & Hoàn thành & Ablation + WAC-50\\
+Cấp 4 UCT & Hoàn thành, sức chơi thấp & Thua 56/56 ván trước Cấp 2--3\\
+Giải đấu, ablation, phân tích & Hoàn thành bằng script riêng & \code{scripts/}, \code{results/}\\
+Báo cáo LaTeX & Bản đầy đủ cho Cấp 1--4 & \code{report/main.tex}\\
+Cấp 5 (ETL + ResNet có giám sát) & Chưa làm (khung rỗng) & Chưa có dữ liệu, chưa huấn luyện\\
+Cấp 6 (RL cờ tàn KRK) & Chưa làm (khung rỗng) & ---\\
+Cấp 7, 8 (PUCT, tự chơi) & Chưa làm (khung rỗng) & ---\\
+Giao diện Pygame & Chưa làm (khung rỗng) & Chưa có demo\\
+Module arena chính thức & Chưa làm (khung rỗng) & Thay tạm bằng script thực nghiệm\\
+Bộ 50 khai cuộc \code{openings\_50.epd} & Chưa có nội dung & Dùng bộ sinh tự động (seed 2024)\\
+\bottomrule\end{tabularx}\end{table}
+
+\section*{3. Kết quả đã đo được}
+\begin{itemize}
+\item Vòng tròn Cấp 1--4 (192 ván): điểm toàn giải Cấp 3 $=0{,}958$; Cấp 2 $=0{,}708$; Cấp 4 $=0{,}297$; Cấp 1 $=0{,}036$.
+\item Ablation Alpha-Beta ($d=3$): cắt tỉa giảm khoảng $7{,}1\times$ số nút; sắp xếp nước đi giảm thêm khoảng $3{,}6\times$; TT thêm khoảng 2,7\%; quiescence nâng số thế WAC giải đúng từ 27 lên 37/50.
+\item UCT với 25--200 mô phỏng thua toàn bộ 96 ván trước Cấp 2.
+\end{itemize}
+Chi tiết, bảng và biểu đồ xem báo cáo đầy đủ \code{Nhom27\_GameAI\_CoVua\_TTNTNC.pdf}.
+
+\section*{4. Khó khăn và rủi ro}
+\begin{itemize}
+\item Phần học sâu (Cấp 5, 7, 8) và RL (Cấp 6) chiếm phần lớn rubric còn thiếu (mục 4 của rubric: 15 điểm cho tác tử học được); rủi ro cao nếu không kịp huấn luyện thật.
+\item Số ván mỗi cặp mới là 32, thấp hơn 100 ván khuyến nghị; chưa chạy chế độ time-control.
+\item Cấp 4 yếu bất thường; nguyên nhân mới ở mức giả thuyết, cần khảo sát thêm (số mô phỏng lớn hơn, rollout tốt hơn).
+\item Chưa gán họ tên cho vai trò TV1--TV3 trong tài liệu phân công; chưa thống kê số commit từng người.
+\end{itemize}
+
+\section*{5. Kế hoạch tiếp theo}
+\begin{enumerate}
+\item Cài đặt \code{board\_tensor}, ETL và huấn luyện thật Cấp 5; lưu loss, checkpoint, log.
+\item Cài đặt Cấp 6 (KRK) và Cấp 7 (PUCT dùng Cấp 5); chạy lại giải đấu với 100 ván/cặp.
+\item Cài đặt giao diện Pygame và module arena chính thức thay script tạm.
+\item Điều tra điểm yếu của Cấp 4; bổ sung ablation cho Cấp 7.
+\item Cập nhật báo cáo \emph{chỉ} bằng số liệu từ lần chạy thật; điền họ tên và số commit vào Phụ lục.
+\end{enumerate}
+\end{document}

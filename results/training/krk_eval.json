@@ -1,0 +1,23 @@
+{
+ "positions": 200,
+ "results": [
+  {
+   "agent": "Level1_Random",
+   "positions": 200,
+   "mate_rate": 0.005,
+   "mean_mate_plies": 29.0
+  },
+  {
+   "agent": "Level3_AlphaBeta",
+   "positions": 200,
+   "mate_rate": 0.585,
+   "mean_mate_plies": 13.41025641025641
+  },
+  {
+   "agent": "Level6_RL_KRK",
+   "positions": 200,
+   "mate_rate": 0.12,
+   "mean_mate_plies": 36.416666666666664
+  }
+ ]
+}

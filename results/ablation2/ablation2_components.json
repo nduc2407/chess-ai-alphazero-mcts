@@ -1,0 +1,51 @@
+{
+ "opponent": "level4",
+ "simulations": 200,
+ "games_per_variant": 20,
+ "results": [
+  {
+   "variant": "policy_only_L5",
+   "wins": 6,
+   "draws": 11,
+   "losses": 3,
+   "score": 0.575,
+   "wilson_ci": [
+    0.36411328932010917,
+    0.7617171918556509
+   ]
+  },
+  {
+   "variant": "value_only_mcts",
+   "wins": 3,
+   "draws": 13,
+   "losses": 4,
+   "score": 0.475,
+   "wilson_ci": [
+    0.27853373483665333,
+    0.6795227714380933
+   ]
+  },
+  {
+   "variant": "prior_only_mcts",
+   "wins": 20,
+   "draws": 0,
+   "losses": 0,
+   "score": 1.0,
+   "wilson_ci": [
+    0.8388698745050667,
+    1.0
+   ]
+  },
+  {
+   "variant": "full_guided_L7",
+   "wins": 16,
+   "draws": 3,
+   "losses": 1,
+   "score": 0.875,
+   "wilson_ci": [
+    0.6687179062016797,
+    0.9604344996771204
+   ]
+  }
+ ]
+}
