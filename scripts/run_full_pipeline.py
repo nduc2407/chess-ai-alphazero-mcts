@@ -39,7 +39,7 @@ def cmd_krk(a):
 
 def cmd_etl(a):
     from chess_ai.etl.pgn_etl import run_etl_pipeline
-    run_etl_pipeline("configs/default_config.yaml", a.pgn, a.out, 42, a.max_samples)
+    run_etl_pipeline("configs/default_config.yaml", a.pgn, a.out, 42, a.max_samples or None)
 
 
 def cmd_train5(a):
@@ -56,14 +56,24 @@ def cmd_ablation7(a):
 
 def cmd_selfplay(a):
     from chess_ai.training.selfplay import run_selfplay_pipeline
-    run_selfplay_pipeline(warm_start_checkpoint=a.ckpt, iterations=a.iterations)
+    ov = {k: v for k, v in dict(selfplay_games_per_iter=a.games, mcts_sims_per_move=a.sims,
+                                arena_eval_games=a.arena_games, max_plies=a.max_plies,
+                                train_steps_per_iter=a.train_steps).items() if v is not None}
+    run_selfplay_pipeline(warm_start_checkpoint=a.ckpt, iterations=a.iterations, overrides=ov)
 
 
 def cmd_tournament(a):
     from chess_ai.arena.tournament import build_agents, run_round_robin_tournament
     ck = dict(x.split("=", 1) for x in a.ckpt)
-    ags, wl = build_agents(a.levels, ck, dict(level3=2000, level4=200, level7=200, level8=200))
-    run_round_robin_tournament(ags, budget_mode=a.mode, workloads=wl, games_per_pair=a.games)
+    levels = []
+    for lv in a.levels:  # bỏ qua cấp chưa có checkpoint (ví dụ Cấp 8 chưa self-play xong)
+        if lv in ck and not Path(ck[lv]).exists():
+            print(f"[Giải đấu] bỏ qua {lv}: không thấy {ck[lv]}", file=sys.stderr)
+            continue
+        levels.append(lv)
+    ags, wl = build_agents(levels, ck, dict(level3=2000, level4=a.sims, level7=a.sims, level8=a.sims))
+    run_round_robin_tournament(ags, budget_mode=a.mode, workloads=wl, games_per_pair=a.games,
+                               output_dir=a.out)
 
 
 def cmd_figures(a):
@@ -75,11 +85,11 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sp = ap.add_subparsers(dest="cmd", required=True)
     s = sp.add_parser("krk"); s.add_argument("--episodes", type=int, default=None); s.add_argument("--positions", type=int, default=200); s.set_defaults(f=cmd_krk)
-    s = sp.add_parser("etl"); s.add_argument("--pgn", required=True); s.add_argument("--out", default="data/processed"); s.add_argument("--max_samples", type=int, default=None); s.set_defaults(f=cmd_etl)
+    s = sp.add_parser("etl"); s.add_argument("--pgn", required=True); s.add_argument("--out", default="data/processed"); s.add_argument("--max_samples", type=int, default=2_000_000, help="giới hạn số mẫu (0 = không giới hạn; một tháng đầy đủ có thể lên hàng chục triệu mẫu, hàng chục GB)"); s.set_defaults(f=cmd_etl)
     s = sp.add_parser("train5"); s.add_argument("--data", default="data/processed"); s.add_argument("--epochs", type=int, default=None); s.add_argument("--max_steps", type=int, default=None); s.add_argument("--resume", default=""); s.add_argument("--workers", type=int, default=0); s.set_defaults(f=cmd_train5)
     s = sp.add_parser("ablation7"); s.add_argument("--ckpt", default="checkpoints/best_model.pt"); s.add_argument("--games", type=int, default=20); s.set_defaults(f=cmd_ablation7)
-    s = sp.add_parser("selfplay"); s.add_argument("--ckpt", default="checkpoints/best_model.pt"); s.add_argument("--iterations", type=int, default=5); s.set_defaults(f=cmd_selfplay)
-    s = sp.add_parser("tournament"); s.add_argument("--levels", nargs="+", default=[f"level{i}" for i in (1, 2, 3, 4, 5, 7, 8)]); s.add_argument("--ckpt", nargs="*", default=["level5=checkpoints/best_model.pt", "level7=checkpoints/best_model.pt", "level8=checkpoints/best_az_model.pt"]); s.add_argument("--mode", default="workload_control"); s.add_argument("--games", type=int, default=None); s.set_defaults(f=cmd_tournament)
+    s = sp.add_parser("selfplay"); s.add_argument("--ckpt", default="checkpoints/best_model.pt"); s.add_argument("--iterations", type=int, default=5); s.add_argument("--games", type=int, default=None, help="ván tự chơi mỗi vòng (chuẩn 50)"); s.add_argument("--sims", type=int, default=None, help="mô phỏng mỗi nước (chuẩn 200)"); s.add_argument("--arena_games", type=int, default=None, help="ván đấu gating (chuẩn 40)"); s.add_argument("--max_plies", type=int, default=None, help="số nửa nước tối đa mỗi ván (chuẩn 300)"); s.add_argument("--train_steps", type=int, default=None); s.set_defaults(f=cmd_selfplay)
+    s = sp.add_parser("tournament"); s.add_argument("--levels", nargs="+", default=[f"level{i}" for i in (1, 2, 3, 4, 5, 7, 8)]); s.add_argument("--ckpt", nargs="*", default=["level5=checkpoints/best_model.pt", "level7=checkpoints/best_model.pt", "level8=checkpoints/best_az_model.pt"]); s.add_argument("--mode", default="workload_control"); s.add_argument("--games", type=int, default=None); s.add_argument("--sims", type=int, default=200, help="mô phỏng mỗi nước cho Cấp 4, 7, 8 (cùng ngân sách)"); s.add_argument("--out", default="results/round_robin_all", help="thư mục kết quả (không ghi đè results/round_robin của Cấp 1-4)"); s.set_defaults(f=cmd_tournament)
     s = sp.add_parser("figures"); s.set_defaults(f=cmd_figures)
     a = ap.parse_args()
     a.f(a)
